@@ -1,0 +1,58 @@
+header { 
+     background-color: #ffd000; 
+     padding: 10px; 
+     text-align: center; 
+     text-decoration-color: #e4e4e4; 
+     color: rgb(0, 0, 0); 
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav { 
+     background-color: #fffb00; 
+     padding: 15px; text-align: center; 
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; border: dashed; 
+}
+nav a {
+     margin-right: 15px;
+}
+nav b {
+     margin-left: 15px;
+}
+section { 
+     background-color: #e4e4e4; padding: 15px; flex: 1; 
+}
+section img {
+     width: 325px; border-radius: 10px;
+}
+main { 
+     display: flex; 
+}
+iframe { 
+     width: 100%; height: 600px; border: none; 
+}
+footer {
+     background-color: #090f47; color: rgb(255, 255, 255); text-align: center; padding: 10px;
+}
+body {
+     text-align: center;
+}
+
+.card {
+     width: 300px;
+     margin: 30px 15px; 
+     padding: 20px;
+     border: 2px solid rgb(0, 0, 0);
+     border-radius: 10px;
+     background-color: #3431dd;
+     display: inline-block;
+     vertical-align: top;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     border: dashed 10px; 
+}
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card img {
+     width: 100%;
+     border-radius: 8px;
+}
