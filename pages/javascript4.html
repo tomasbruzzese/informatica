@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript4</title>
+</head>
+<body>
+    for (inicialización; condición; incremento) {
+// Instrucciones que se repiten.
+<h3>El ciclo for:</h3>
+<p>Ejemplo: imprimir los números del 1 al 5.</p>
+<button id="ejemplo1" type="button">Ver</button>
+
+<script>
+const btn1 = document.querySelector("#ejemplo1");
+btn1.addEventListener("click", function() {
+let mensaje = "Imprimiendo números del 1 al 5:\n";
+for (let i = 1; i <= 5; i++) {
+mensaje += "Número " + i + "\n";
+}
+alert(mensaje);
+});
+</script>
+
+while (condición) {
+// Instrucciones que se repiten.
+}
+<h3>El ciclo while:</h3>
+<p>Ejemplo: cuenta regresiva.</p>
+<button id="ejemplo2" type="button">Ver</button>
+
+<script>
+const btn2 = document.querySelector("#ejemplo2");
+btn2.addEventListener("click", function() {
+let mensaje = "Cuenta regresiva:\n";
+let numero = 5;
+while (numero > 0) {
+mensaje += "Número: " + numero + "\n";
+numero--;
+}
+alert(mensaje);
+});
+</script>
+
+do {
+// Instrucciones que se ejecutan.
+} while (condición);
+<h3>El ciclo do...while:</h3>
+<p>Ejemplo: comprobar ingredientes.</p>
+<button id="ejemplo3" type="button">Ver</button>
+
+<script>
+const btn3 = document.querySelector("#ejemplo3");
+btn3.addEventListener("click", function() {
+let mensaje = "Comprobando ingredientes:\n";
+let ingredientes = ["Tomate", "Lechuga", "Zanahoria", "Pepino"];
+let i = 0;
+do {
+mensaje += "Ingrediente: " + ingredientes[i] + "\n";
+i++;
+} while (i < ingredientes.length);
+alert(mensaje);
+});
+</script>
+
+<h3>El ciclo for...of:</h3>
+<p>Ejemplo: listar estudiantes.</p>
+<button id="ejemplo4" type="button">Ver</button>
+
+<script>
+const btn4 = document.querySelector("#ejemplo4");
+btn4.addEventListener("click", function() {
+let mensaje = "Estudiantes en el aula:\n";
+const estudiantes = ["Ana", "Carlos", "Elena"];
+for (let estudiante of estudiantes) {
+mensaje += estudiante + "\n";
+}
+alert(mensaje);
+});
+</script>
+
+<h3>El ciclo for...in:</h3>
+<p>Ejemplo: mostrar datos de la receta.</p>
+<button id="ejemplo5" type="button">Ver</button>
+
+<script>
+const btn5 = document.querySelector("#ejemplo5");
+btn5.addEventListener("click", function() {
+let mensaje = "Datos de la receta:\n";
+const receta = {
+nombre: "Ensalada",
+dificultad: "Fácil",
+tiempo: "15 minutos"
+};
+for (let propiedad in receta) {
+mensaje += propiedad + ": " + receta[propiedad] + "\n";
+}
+alert(mensaje);
+});
+</script>
+
+<h1>Trivia de Conocimientos Generales</h1>
+<h2>1. ¿Cuál es el planeta más grande del sistema solar?</h2>
+<input type="radio" name="p1" value="a"> La Tierra<br>
+<input type="radio" name="p1" value="b"> Júpiter<br>
+<input type="radio" name="p1" value="c"> Marte<br>
+<h2>2. ¿Cuántos continentes hay en la Tierra?</h2>
+<input type="radio" name="p2" value="a"> 5<br>
+<input type="radio" name="p2" value="b"> 6<br>
+<input type="radio" name="p2" value="c"> 7<br>
+<h2>3. ¿Cuál es el océano más grande del mundo?</h2>
+<input type="radio" name="p3" value="a"> Atlántico<br>
+<input type="radio" name="p3" value="b"> Índico<br>
+<input type="radio" name="p3" value="c"> Pacífico<br>
+<h2>4. ¿Quién descubrió América?</h2>
+<input type="radio" name="p4" value="a"> Albert Einstein<br>
+<input type="radio" name="p4" value="b"> Cristóbal Colón<br>
+<input type="radio" name="p4" value="c"> Américo Vespucio<br>
+<h2>5. ¿Cuál es el futbolista más conocido del mundo?</h2>
+<input type="radio" name="p5" value="a"> Cristiano Ronaldo<br>
+<input type="radio" name="p5" value="b"> Kylian Mbappé<br>
+<input type="radio" name="p5" value="c"> Lionel Messi<br>
+<br>
+<button id="comprobar" type="button">Comprobar</button>
+<button id="reiniciar" type="button">Reiniciar</button>
+<p id="resultado"></p>
+<script>
+document.getElementById("comprobar").addEventListener("click", function() {
+let puntaje = 0;
+let p1 = document.querySelector('input[name="p1"]:checked');
+let p2 = document.querySelector('input[name="p2"]:checked');
+let p3 = document.querySelector('input[name="p3"]:checked');
+let p4 = document.querySelector('input[name="p4"]:checked');
+let p5 = document.querySelector('input[name="p5"]:checked');
+if (!p1 || !p2 || !p3) {
+document.getElementById("resultado").innerHTML =
+"Debes responder las tres preguntas.";
+return;
+}
+// Respuestas correctas
+if (p1.value === "b") puntaje++;
+if (p2.value === "c") puntaje++;
+if (p3.value === "c") puntaje++;
+if (p4.value === "b") puntaje++;
+if (p5.value === "c") puntaje++;
+let mensaje = "<h3>Resultado: " + puntaje + "/5 puntos</h3>";
+if (puntaje === 5) {
+mensaje += "¡Felicitaciones! Has respondido correctamente todas las preguntas.";
+} else if (puntaje === 4) {
+mensaje += "Buen intento. Solo te equivocaste en una pregunta.";
+} else {
+mensaje += "Te invito a intentarlo nuevamente.";
+}
+document.getElementById("resultado").innerHTML = mensaje;
+});
+document.getElementById("reiniciar").addEventListener("click", function() {
+let opciones = document.querySelectorAll('input[type="radio"]');
+for (let opcion of opciones) {
+opcion.checked = false;
+}
+document.getElementById("resultado").innerHTML = "";
+});
+</script>
+</body>
+</html>
